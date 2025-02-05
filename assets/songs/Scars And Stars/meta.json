@@ -10,7 +10,8 @@
 	"needsVoices": true,
 	"parsedColor": -1,
 	"displayName": "scarstar",
-	"icon": "pico",
+	"icon": "scourge",
 	"name": "Scars And Stars",
-	"color": "#FFFFFF"
+	"color": "#FFFFFF",
+	"customValues": {}
 }
