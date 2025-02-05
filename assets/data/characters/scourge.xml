@@ -1,0 +1,13 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" x="0" y="350" color="#31B0D1">
+	<anim name="idle"          anim="idle"       fps="24" loop="false" x="0"  y="0"/>
+	<anim name="singUP"        anim="up0"        fps="24" loop="false" x="0"  y="0"/>
+	<anim name="singLEFT"      anim="left0"      fps="24" loop="false" x="10" y="-5"/>
+	<anim name="singRIGHT"     anim="right0"     fps="24" loop="false" x="-5" y="3"/>
+	<anim name="singDOWN"      anim="down0"      fps="24" loop="false" x="-5" y="3"/>
+	<anim name="singUP-alt"	   anim="up-alt"     fps="24" loop="false" x="0"  y="0"/>
+	<anim name="singLEFT-alt"  anim="left-alt"   fps="24" loop="false" x="10" y="-5"/>
+	<anim name="singRIGHT-alt" anim="right-alt"  fps="24" loop="false" x="-5" y="3"/>
+	<anim name="singDOWN-alt"  anim="down-alt"   fps="24" loop="false" x="-5" y="3"/>
+	<anim name="this"          anim="eat"        fps="24" loop="false" x="0"  y="0"/>
+</character>
