@@ -28,6 +28,11 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var versionText:FunkinText;
 
+	var selector:FlxSprite;
+	var selectRow:Int = 0;
+	var lerpSel:Float = 235;
+	var itsTime:Bool = false;
+
 	public var canAccessDebugMenus:Bool = true;
 
 	override function create()
@@ -50,7 +55,7 @@ class MainMenuState extends MusicBeatState
 		add(magenta);
 
 		for(bg in [bg, magenta]) {
-			bg.scrollFactor.set(0, 0.18);
+			bg.scrollFactor.set(0, 0);
 			bg.scale.set(1.15, 1.15);
 			bg.updateHitbox();
 			bg.screenCenter();
@@ -62,26 +67,28 @@ class MainMenuState extends MusicBeatState
 
 		for (i=>option in optionShit)
 		{
-			var menuItem:FlxSprite = new FlxSprite(0, 60 + (i * 160));
+			var menuItem:FlxSprite = new FlxSprite(150, 250 + (i * 100));
 			menuItem.frames = Paths.getFrames('menus/mainmenu/${option}');
 			menuItem.animation.addByPrefix('idle', option + " basic", 24);
 			menuItem.animation.addByPrefix('selected', option + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
+			menuItem.scale.set(0.75, 0.75);
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
 		}
 
 		FlxG.camera.follow(camFollow, null, 0.06);
 
-		versionText = new FunkinText(5, FlxG.height - 2, 0, 'Codename Engine v${Application.current.meta.get('version')}\nCommit ${funkin.backend.system.macros.GitCommitMacro.commitNumber} (${funkin.backend.system.macros.GitCommitMacro.commitHash})\n[${controls.getKeyName(SWITCHMOD)}] Open Mods menu\n');
-		versionText.y -= versionText.height;
-		versionText.scrollFactor.set();
-		add(versionText);
-
 		changeItem();
+
+		selector = new FlxSprite(20,235).loadAnimatedGraphic(Paths.image('menus/selector'));
+		add(selector);
+		selector.scrollFactor.set(0, 0);
+		selector.scale.set(1, 1);
+		selector.updateHitbox();
+		selector.antialiasing = true;
 	}
 
 	var selectedSomethin:Bool = false;
@@ -89,6 +96,25 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+		switch (selectRow) {
+
+			case 0: selector.y = 235;
+			case 1: selector.y = 335;
+			case 2: selector.y = 435;
+			case 3: selector.y = 535;
+
+		}
+		if (selectRow > 3)
+			selectRow = 0;
+		if (selectRow < 0)
+			selectRow = 3;
+
+		lerpSel = CoolUtil.fpsLerp(lerpSel, selector.y, 0.15);
+		selector.y = lerpSel;
+
+
+		
 		if (FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume += 0.5 * elapsed;
 
@@ -113,11 +139,17 @@ class MainMenuState extends MusicBeatState
 			var downP = controls.DOWN_P;
 			var scroll = FlxG.mouse.wheel;
 
-			if (upP || downP || scroll != 0)  // like this we wont break mods that expect a 0 change event when calling sometimes  - Nex
+			if (upP || downP || scroll != 0) {
 				changeItem((upP ? -1 : 0) + (downP ? 1 : 0) - scroll);
+			}	
+
+			if (upP)
+				selectRow -= 1;
+			if (downP)
+				selectRow += 1;
 
 			if (controls.BACK)
-				FlxG.switchState(new TitleState());
+				FlxG.switchState(new BetaWarningState());
 
 			#if MOD_SUPPORT
 			if (controls.SWITCHMOD) {
@@ -136,7 +168,7 @@ class MainMenuState extends MusicBeatState
 		if (forceCenterX)
 		menuItems.forEach(function(spr:FlxSprite)
 		{
-			spr.screenCenter(X);
+
 		});
 	}
 
@@ -165,11 +197,12 @@ class MainMenuState extends MusicBeatState
 			{
 				case 'story mode': FlxG.switchState(new StoryMenuState());
 				case 'freeplay': FlxG.switchState(new FreeplayState());
-				case 'donate', 'credits': FlxG.switchState(new CreditsMain());  // kept donate for not breaking scripts, if you dont want donate to bring you to the credits menu, thats easy softcodable  - Nex
 				case 'options': FlxG.switchState(new OptionsMenu());
+				case 'credits': FlxG.switchState(new CreditsMain());
 			}
 		});
 	}
+
 	function changeItem(huh:Int = 0)
 	{
 		var event = event("onChangeItem", EventManager.get(MenuChangeEvent).recycle(curSelected, FlxMath.wrap(curSelected + huh, 0, menuItems.length-1), huh, huh != 0));
@@ -182,6 +215,7 @@ class MainMenuState extends MusicBeatState
 
 		menuItems.forEach(function(spr:FlxSprite)
 		{
+
 			spr.animation.play('idle');
 
 			if (spr.ID == curSelected)
