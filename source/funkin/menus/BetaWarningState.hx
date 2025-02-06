@@ -13,13 +13,13 @@ class BetaWarningState extends MusicBeatState {
 	public override function create() {
 		super.create();
 
-		titleAlphabet = new Alphabet(0, 0, "WARNING", true);
+		titleAlphabet = new Alphabet(0, 0, "ITS A CLOWN ATTACK BITCH", true);
 		titleAlphabet.screenCenter(X);
 		add(titleAlphabet);
 
 		disclaimer = new FunkinText(16, titleAlphabet.y + titleAlphabet.height + 10, FlxG.width - 32, "", 32);
 		disclaimer.alignment = CENTER;
-		disclaimer.applyMarkup('This engine is still in a *${Main.releaseCycle}* state. That means *majority of the features* are either *buggy* or *non finished*. If you find any bugs, please report them to the Codename Engine GitHub.\n\nPress ENTER to continue',
+		disclaimer.applyMarkup('This is a *DEV BUILD* for KirBF & Friends\nIt is very unfinished and does not include content\nfor many of the future episodes.\n\nPlease be aware that crashes are very possible.\n*DO NOT SHARE*',
 			[
 				new FlxTextFormatMarkerPair(new FlxTextFormat(0xFFFF4444), "*")
 			]
