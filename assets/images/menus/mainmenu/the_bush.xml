@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="the_bush.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blink0000" x="0" y="0" width="551" height="421"/>
+	<SubTexture name="blink0001" x="0" y="0" width="551" height="421"/>
+	<SubTexture name="blink0002" x="0" y="0" width="551" height="421"/>
+	<SubTexture name="blink0003" x="551" y="0" width="551" height="421"/>
+	<SubTexture name="blink0004" x="551" y="0" width="551" height="421"/>
+	<SubTexture name="blink0005" x="551" y="0" width="551" height="421"/>
+	<SubTexture name="blink0006" x="2204" y="421" width="551" height="421"/>
+	<SubTexture name="blink0007" x="2204" y="421" width="551" height="421"/>
+	<SubTexture name="blink0008" x="2204" y="421" width="551" height="421"/>
+	<SubTexture name="bump0000" x="1102" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0001" x="1102" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0002" x="1653" y="0" width="551" height="421" frameX="-1" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0003" x="1653" y="0" width="551" height="421" frameX="-1" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0004" x="2204" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0005" x="2204" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0006" x="2755" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0007" x="2755" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0008" x="3306" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0009" x="3306" y="0" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0010" x="0" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0011" x="0" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0012" x="551" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0013" x="551" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0014" x="1102" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0015" x="1102" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0016" x="1653" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="bump0017" x="1653" y="421" width="551" height="421" frameX="0" frameY="0" frameWidth="552" frameHeight="421"/>
+	<SubTexture name="idle0000" x="2204" y="421" width="551" height="421"/>
+	<SubTexture name="wave0000" x="2755" y="421" width="551" height="421"/>
+	<SubTexture name="wave0001" x="2755" y="421" width="551" height="421"/>
+	<SubTexture name="wave0002" x="3306" y="421" width="551" height="421"/>
+	<SubTexture name="wave0003" x="3306" y="421" width="551" height="421"/>
+	<SubTexture name="wave0004" x="0" y="842" width="551" height="421"/>
+	<SubTexture name="wave0005" x="0" y="842" width="551" height="421"/>
+	<SubTexture name="wave0006" x="551" y="842" width="551" height="421"/>
+	<SubTexture name="wave0007" x="551" y="842" width="551" height="421"/>
+	<SubTexture name="wave0008" x="1102" y="842" width="551" height="421"/>
+	<SubTexture name="wave0009" x="1102" y="842" width="551" height="421"/>
+	<SubTexture name="wave0010" x="1653" y="842" width="551" height="421"/>
+	<SubTexture name="wave0011" x="1653" y="842" width="551" height="421"/>
+	<SubTexture name="wave0012" x="1653" y="842" width="551" height="421"/>
+	<SubTexture name="wave0013" x="1653" y="842" width="551" height="421"/>
+	<SubTexture name="wave0014" x="2204" y="842" width="551" height="421"/>
+	<SubTexture name="wave0015" x="2204" y="842" width="551" height="421"/>
+	<SubTexture name="wave0016" x="2755" y="842" width="551" height="421"/>
+	<SubTexture name="wave0017" x="2755" y="842" width="551" height="421"/>
+	<SubTexture name="wave0018" x="3306" y="842" width="551" height="421"/>
+	<SubTexture name="wave0019" x="3306" y="842" width="551" height="421"/>
+	<SubTexture name="wave0020" x="0" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0021" x="0" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0022" x="551" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0023" x="551" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0024" x="1102" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0025" x="1102" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0026" x="1653" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0027" x="1653" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0028" x="1653" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0029" x="1653" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0030" x="2204" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0031" x="2204" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0032" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0033" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0034" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0035" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0036" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0037" x="2755" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0038" x="3306" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0039" x="3306" y="1263" width="551" height="421"/>
+	<SubTexture name="wave0040" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0041" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0042" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0043" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0044" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0045" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0046" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0047" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0048" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0049" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0050" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0051" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0052" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0053" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0054" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0055" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0056" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0057" x="0" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0058" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0059" x="551" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0060" x="1102" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0061" x="1102" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0062" x="1653" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0063" x="1653" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0064" x="2204" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0065" x="2204" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0066" x="2755" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0067" x="2755" y="1684" width="551" height="421"/>
+	<SubTexture name="wave0068" x="2204" y="421" width="551" height="421"/>
+	<SubTexture name="wave0069" x="2204" y="421" width="551" height="421"/>
+</TextureAtlas>

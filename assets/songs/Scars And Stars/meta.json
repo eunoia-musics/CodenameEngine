@@ -1,17 +1,17 @@
 {
-	"beatsPerMeasure": 4,
 	"opponentModeAllowed": false,
-	"coopAllowed": false,
-	"stepsPerBeat": 4,
-	"bpm": 190,
+	"icon": "scourge",
 	"difficulties": [
 		"Normal"
 	],
-	"needsVoices": true,
 	"parsedColor": -1,
-	"displayName": "scarstar",
-	"icon": "scourge",
-	"name": "Scars And Stars",
+	"customValues": {},
 	"color": "#FFFFFF",
-	"customValues": {}
+	"name": "Scars And Stars",
+	"coopAllowed": false,
+	"stepsPerBeat": 4,
+	"displayName": "scarstar",
+	"beatsPerMeasure": 4,
+	"needsVoices": true,
+	"bpm": 190
 }

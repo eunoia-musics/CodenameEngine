@@ -23,12 +23,14 @@ class MainMenuState extends MusicBeatState
 
 	var optionShit:Array<String> = CoolUtil.coolTextFile(Paths.txt("config/menuItems"));
 
-	var bg:FlxSprite;
-	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 	var versionText:FunkinText;
 
-	var selector:FlxSprite;
+	var back:FlxSprite;
+	var front:FlxSprite;
+	var logo:FlxSprite;
+	var selector:FlxSprite = new FlxSprite(30);
+	var bush:FlxSprite = new FlxSprite(750, 300);
 	var selectRow:Int = 0;
 	var lerpSel:Float = 235;
 	var itsTime:Bool = false;
@@ -43,24 +45,35 @@ class MainMenuState extends MusicBeatState
 
 		CoolUtil.playMenuSong();
 
-		bg = new FlxSprite(-80).loadAnimatedGraphic(Paths.image('menus/menuBG'));
-		add(bg);
+		back = new FlxSprite(0).loadAnimatedGraphic(Paths.image('menus/mainmenu/the_back'));
+		add(back);
+		back.scrollFactor.set(0,0);
+		back.scale.set(1.15, 1.15);
+		back.screenCenter();
+
+		var sea:FlxSprite = new FlxSprite(0,0);
+		sea.frames = Paths.getFrames('menus/mainmenu/the_c');
+		sea.animation.addByPrefix('idle', "sea", 24);
+		sea.animation.play('idle');
+		add(sea);
+		sea.scrollFactor.set(0,0);
+		sea.scale.set(1.15, 1.15);
+		sea.screenCenter();
+		sea.y -= 50;
+
+		front = new FlxSprite(0,0).loadAnimatedGraphic(Paths.image('menus/mainmenu/the_front'));
+		add(front);
+		front.scrollFactor.set(0,0);
+		front.scale.set(1.15, 1.15);
+		front.screenCenter();
+
+		logo = new FlxSprite(180,30).loadAnimatedGraphic(Paths.image('menus/mainmenu/logo'));
+		add(logo);
+		logo.scrollFactor.set(0,0);
+		logo.scale.set(1.15, 1.15);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
-
-		magenta = new FlxSprite(-80).loadAnimatedGraphic(Paths.image('menus/menuDesat'));
-		magenta.visible = false;
-		magenta.color = 0xFFfd719b;
-		add(magenta);
-
-		for(bg in [bg, magenta]) {
-			bg.scrollFactor.set(0, 0);
-			bg.scale.set(1.15, 1.15);
-			bg.updateHitbox();
-			bg.screenCenter();
-			bg.antialiasing = true;
-		}
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -83,12 +96,23 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-		selector = new FlxSprite(20,235).loadAnimatedGraphic(Paths.image('menus/selector'));
+		selector.frames = Paths.getFrames('menus/mainmenu/select');
+		selector.animation.addByPrefix('idle', "select", 24);
+		selector.animation.play('idle');
 		add(selector);
 		selector.scrollFactor.set(0, 0);
 		selector.scale.set(1, 1);
 		selector.updateHitbox();
 		selector.antialiasing = true;
+
+		bush.frames = Paths.getFrames('menus/mainmenu/the_bush');
+		bush.animation.addByPrefix('idle', "idle", 24);
+		bush.animation.addByPrefix('blink', "blink", 24);
+		bush.animation.addByPrefix('bump', "bump", 24);
+		bush.animation.addByPrefix('wave', "wave", 24);
+		bush.animation.play('idle');
+		add(bush);
+		bush.scrollFactor.set(0, 0);
 	}
 
 	var selectedSomethin:Bool = false;
@@ -96,13 +120,12 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-
 		switch (selectRow) {
 
-			case 0: selector.y = 235;
-			case 1: selector.y = 335;
-			case 2: selector.y = 435;
-			case 3: selector.y = 535;
+			case 0: selector.y = 240;
+			case 1: selector.y = 340;
+			case 2: selector.y = 440;
+			case 3: selector.y = 540;
 
 		}
 		if (selectRow > 3)
@@ -112,8 +135,6 @@ class MainMenuState extends MusicBeatState
 
 		lerpSel = CoolUtil.fpsLerp(lerpSel, selector.y, 0.15);
 		selector.y = lerpSel;
-
-
 		
 		if (FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume += 0.5 * elapsed;
@@ -185,8 +206,6 @@ class MainMenuState extends MusicBeatState
 		selectedSomethin = true;
 		CoolUtil.playMenuSFX(CONFIRM);
 
-		if (Options.flashingMenu) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
-
 		FlxFlicker.flicker(menuItems.members[curSelected], 1, Options.flashingMenu ? 0.06 : 0.15, false, false, function(flick:FlxFlicker)
 		{
 			var daChoice:String = optionShit[curSelected];
@@ -198,7 +217,7 @@ class MainMenuState extends MusicBeatState
 				case 'story mode': FlxG.switchState(new StoryMenuState());
 				case 'freeplay': FlxG.switchState(new FreeplayState());
 				case 'options': FlxG.switchState(new OptionsMenu());
-				case 'credits': FlxG.switchState(new CreditsMain());
+				case 'extras': FlxG.switchState(new CreditsMain());
 			}
 		});
 	}

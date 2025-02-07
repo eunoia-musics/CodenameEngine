@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="select.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="select0000" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0001" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0002" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0003" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0004" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0005" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0006" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0007" x="0" y="0" width="104" height="100"/>
+	<SubTexture name="select0008" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0009" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0010" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0011" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0012" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0013" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0014" x="104" y="0" width="104" height="100"/>
+	<SubTexture name="select0015" x="104" y="0" width="104" height="100"/>
+</TextureAtlas>

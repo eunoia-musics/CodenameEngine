@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="extras.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="extras basic" x="0" y="0" width="360" height="120"/>
+	<SubTexture name="extras white" x="0" y="120" width="360" height="120"/>
+</TextureAtlas>
