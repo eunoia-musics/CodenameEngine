@@ -8,6 +8,7 @@ import flixel.effects.FlxFlicker;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 import lime.app.Application;
 import funkin.backend.scripting.events.*;
 
@@ -30,9 +31,9 @@ class MainMenuState extends MusicBeatState
 	var front:FlxSprite;
 	var logo:FlxSprite;
 	var selector:FlxSprite = new FlxSprite(30);
-	var bush:FlxSprite = new FlxSprite(750, 300);
+	var bush:FlxSprite = new FlxSprite(750, 340);
 	var selectRow:Int = 0;
-	var lerpSel:Float = 235;
+	var lerpSel:Float = 335;
 	var itsTime:Bool = false;
 
 	public var canAccessDebugMenus:Bool = true;
@@ -47,7 +48,7 @@ class MainMenuState extends MusicBeatState
 
 		back = new FlxSprite(0).loadAnimatedGraphic(Paths.image('menus/mainmenu/the_back'));
 		add(back);
-		back.scrollFactor.set(0,0);
+		back.scrollFactor.set(0, 0.025);
 		back.scale.set(1.15, 1.15);
 		back.screenCenter();
 
@@ -56,21 +57,21 @@ class MainMenuState extends MusicBeatState
 		sea.animation.addByPrefix('idle', "sea", 24);
 		sea.animation.play('idle');
 		add(sea);
-		sea.scrollFactor.set(0,0);
+		sea.scrollFactor.set(0, 0.05);
 		sea.scale.set(1.15, 1.15);
 		sea.screenCenter();
 		sea.y -= 50;
 
 		front = new FlxSprite(0,0).loadAnimatedGraphic(Paths.image('menus/mainmenu/the_front'));
 		add(front);
-		front.scrollFactor.set(0,0);
+		front.scrollFactor.set(0, 0.1);
 		front.scale.set(1.15, 1.15);
 		front.screenCenter();
 
-		logo = new FlxSprite(180,30).loadAnimatedGraphic(Paths.image('menus/mainmenu/logo'));
+		logo = new FlxSprite(140,100).loadAnimatedGraphic(Paths.image('menus/mainmenu/logo'));
 		add(logo);
 		logo.scrollFactor.set(0,0);
-		logo.scale.set(1.15, 1.15);
+		logo.scale.set(1.5, 1.5);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
@@ -80,14 +81,14 @@ class MainMenuState extends MusicBeatState
 
 		for (i=>option in optionShit)
 		{
-			var menuItem:FlxSprite = new FlxSprite(150, 250 + (i * 100));
+			var menuItem:FlxSprite = new FlxSprite(150, 350 + (i * 75));
 			menuItem.frames = Paths.getFrames('menus/mainmenu/${option}');
 			menuItem.animation.addByPrefix('idle', option + " basic", 24);
 			menuItem.animation.addByPrefix('selected', option + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItems.add(menuItem);
-			menuItem.scale.set(0.75, 0.75);
+			menuItem.scale.set(0.6, 0.6);
 			menuItem.scrollFactor.set();
 			menuItem.antialiasing = true;
 		}
@@ -112,20 +113,20 @@ class MainMenuState extends MusicBeatState
 		bush.animation.addByPrefix('wave', "wave", 24);
 		bush.animation.play('idle');
 		add(bush);
-		bush.scrollFactor.set(0, 0);
+		bush.scrollFactor.set(0, 0.125);
 	}
 
 	var selectedSomethin:Bool = false;
 	var forceCenterX:Bool = true;
-
+	
 	override function update(elapsed:Float)
 	{
 		switch (selectRow) {
 
-			case 0: selector.y = 240;
-			case 1: selector.y = 340;
-			case 2: selector.y = 440;
-			case 3: selector.y = 540;
+			case 0: selector.y = 335;
+			case 1: selector.y = 410;
+			case 2: selector.y = 485;
+			case 3: selector.y = 560;
 
 		}
 		if (selectRow > 3)

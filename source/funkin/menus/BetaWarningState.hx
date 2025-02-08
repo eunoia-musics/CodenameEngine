@@ -38,19 +38,17 @@ class BetaWarningState extends MusicBeatState {
 
 		if (controls.ACCEPT && transitioning) {
 			FlxG.camera.stopFX(); FlxG.camera.visible = false;
-			goToMainMenu();
+			goToOpening();
 		}
 
 		if (controls.ACCEPT && !transitioning) {
 			transitioning = true;
-			CoolUtil.playMenuSFX(CONFIRM);
-			FlxG.camera.flash(FlxColor.WHITE, 1, function() {
-				FlxG.camera.fade(FlxColor.BLACK, 2.5, false, goToMainMenu);
-			});
+			goToOpening();
 		}
 	}
 
-	private function goToMainMenu() {
-		FlxG.switchState(new MainMenuState());
+	private function goToOpening() {
+		MusicBeatState.skipTransIn = MusicBeatState.skipTransOut = true;
+		FlxG.switchState(new OpeningJingleState());
 	}
 }
